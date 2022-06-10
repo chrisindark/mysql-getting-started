@@ -47,3 +47,29 @@ from information_schema.tables
 where TABLE_SCHEMA not in ("mysql")
 GROUP BY 1,2
 ORDER BY APPROXIMATED_FRAGMENTED_SPACE_GB DESC;
+
+# percona toolkit for updating tables without locking
+
+apt update
+apt upgrade -y
+apt install -y sudo
+sudo apt update
+sudo apt install -y software-properties-common
+
+sudo apt install -y byobu
+byobu --version
+byobu-enable
+byobu-select-backend
+byobu-enable-prompt
+. ~/.bashrc
+
+sudo apt install -y nano
+
+nano optimize_tables_without_locking.sh
+
+tmux
+
+// sudo apt install -y percona-toolkit
+bash optimize_tables_without_locking.sh
+
+ctrl + b, d
